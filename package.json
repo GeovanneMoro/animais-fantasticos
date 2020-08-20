@@ -1,15 +1,12 @@
 {
-  "name": "animais-fantasticos-automacao",
+  "name": "animais-fantasticos-final",
   "version": "1.0.0",
-  "description": "",
   "main": "index.html",
   "scripts": {
     "build": "webpack --mode production",
-    "build-sem-babel": "webpack --mode production js/script.js --output ./main.js",
-    "dev": "webpack -- mode development --watch",
-    "dev-sem-babel": "webpack -- mode development --watch js/script.js --output ./main.js"
+    "dev": "webpack --mode development --watch"
   },
-  "author": "",
+  "author": "Geovanne Moro",
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.10.5",
