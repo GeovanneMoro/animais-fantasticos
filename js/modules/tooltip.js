@@ -1,4 +1,4 @@
-export default class initTooltip {
+export default class Tooltip {
   constructor() {
     this.tooltips = document.querySelectorAll("[data-tooltip]");
 
