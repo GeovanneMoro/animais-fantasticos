@@ -161,12 +161,19 @@ body {
 }
 
 .faq-lista dt::after {
-  content: "↲";
+  content: "";
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  background: url("../img/arrow-red.svg") no-repeat center center;
+  transform: rotate(90deg);
   margin-left: 10px;
+  transition: transform 0.4s;
 }
 
 .faq-lista dt.ativo::after {
-  content: "↰";
+  content: "";
+  transform: rotate(-90deg);
 }
 
 .faq-lista dd {
@@ -294,12 +301,14 @@ body {
 }
 
 .modal {
-  min-width: 300px;
+  width: 80vw;
+  max-width: 600px;
   background-color: #fff;
   padding: 40px;
   border: 10px solid #fb5;
   box-shadow: 0 0 0 10px #fff;
   position: relative;
+  box-sizing: border-box;
 }
 
 @keyframes modal {
@@ -318,7 +327,7 @@ body {
 }
 
 .fechar {
-  background-color: #e54;
+  background: #e54 url("../img/fechar.svg") no-repeat center center;
   width: 50px;
   height: 50px;
   border-radius: 100%;
@@ -327,10 +336,7 @@ body {
   top: -30px;
   right: -30px;
   position: absolute;
-  font-size: 1.2rem;
-  color: #fff;
   cursor: pointer;
-  font-family: "IBM Plex Mono", monospace;
 }
 
 .modal label {
@@ -505,7 +511,18 @@ body {
   border-radius: 2px;
 }
 
+.arrow-black {
+  background: url("../img/arrow-black.svg") no-repeat center center;
+  display: inline-block;
+  width: 8px;
+  height: 10px;
+}
+
 @media (max-width: 700px) {
+  .modal {
+    padding: 20px;
+  }
+
   .grid-container {
     grid-template-columns: 1fr;
   }
@@ -528,7 +545,8 @@ body {
 
   .faq-lista,
   .dados,
-  .copy {
+  .copy,
+  .mapa {
     grid-column: 1 / 3;
   }
 
@@ -602,6 +620,19 @@ body {
   }
 
   .numeros-grid {
-    grid-column: 1;
+    grid-column: 1 / -1;
+  }
+
+  [data-dropdown] .dropdown-menu {
+    display: block;
+    animation: show-up 0.3s forwards;
+  }
+
+  .numeros-grid h3 {
+    font-size: 1.5rem;
+  }
+
+  .grid-section h1 {
+    font-size: 2.5rem;
   }
 }
